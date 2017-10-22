@@ -1,0 +1,197 @@
+// sass-lint:disable property-sort-order, no-vendor-prefixes
+@import 'vars';
+
+nav {
+
+  background-color: $nav-background-full;
+  height: $nav-height;
+  left: 0;
+  position: fixed;
+  top: -1;
+  width: 100%;
+  z-index: 999;
+
+  .title {
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 300;
+    height: $nav-height;
+    line-height: $nav-height;
+    color: $title-text;
+  }
+
+  .container {
+    height: auto;
+    line-height: normal;
+  }
+
+  ul {
+
+    display: none;
+    clear: both;
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: $nav-background-full;
+    position: relative;
+
+  }
+
+  .shown {
+    display: block;
+  }
+
+  .hamburger {
+
+    display: block;
+
+    a {
+      font-size: 30px;
+      font-weight: 300;
+      height: $nav-height;
+      line-height: $nav-height;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $nav-active-background;
+      }
+    }
+  }
+
+  li {
+
+    display: block;
+    clear: both;
+    height: auto;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    &.active {
+      background-color: $nav-active-background;
+    }
+  }
+
+  a {
+    color: $nav-text;
+    display: block;
+    font-weight: 600;
+    height: $nav-height;
+    line-height: $nav-height;
+    padding: 0 20px;
+    margin: 0;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $nav-background-hover;
+      color: $nav-text-hover;
+    }
+
+  }
+
+  @media screen and (min-width: $mobile-break) {
+    ul {
+      display: block;
+      clear: none;
+      height: auto;
+      width: auto;
+      line-height: normal;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background-color: $nav-background-full;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    li {
+      clear: none;
+      display: inline-block;
+      height: auto;
+      line-height: normal;
+      margin: 0 0 0 10px;
+      padding: 0;
+      width: auto;
+
+      &.active {
+        background-color: $nav-active-background;
+      }
+    }
+
+    a {
+      color: $nav-text;
+      display: inline-block;
+      font-weight: 600;
+      height: $nav-height;
+      line-height: $nav-height;
+      padding: 0 10px;
+      text-decoration: none;
+      width: auto;
+
+      &:hover {
+        background-color: $nav-background-hover;
+        color: $nav-text-hover;
+      }
+
+    }
+  }
+
+}
+
+.nav-hidden {
+  animation-name: nav-hider;
+  animation-duration: .25s;
+  animation-fill-mode: forwards;
+}
+
+.nav-shown {
+  animation-name: nav-shower;
+  animation-duration: .25s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes nav-hider {
+
+  0% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(-51px);
+    -moz-transform: translateY(-51px);
+    -ms-transform: translateY(-51px);
+    -o-transform: translateY(-51px);
+    transform: translateY(-51px);
+  }
+
+}
+
+@keyframes nav-shower {
+
+  0% {
+    -webkit-transform: translateY(-51px);
+    -moz-transform: translateY(-51px);
+    -ms-transform: translateY(-51px);
+    -o-transform: translateY(-51px);
+    transform: translateY(-51px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+}
+

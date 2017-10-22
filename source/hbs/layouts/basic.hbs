@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{site.title}}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{site.description}}">
+    <meta name="keywords" content="{{site.keywords}}">
+    <meta name="author" content="{{site.author}}">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+</head>
+<body>
+{{>navigation}}
+<div class="container">
+    <div class="row">
+        <div class="twelve columns content">
+            {{#block "main"}}
+                <p>Content here.</p>
+            {{/block}}
+        </div>
+    </div>
+</div>
+<script src="/js/client.js"></script>
+</body>
+</html>
